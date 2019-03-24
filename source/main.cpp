@@ -60,7 +60,7 @@ void handler_erase(Request_erase * request, Response_erase * response)
     }
     else
     {
-        _d("Invalid request, make request within Server boundary");
+        _d("Invalid request, make request within current build Server boundary");
         _d("Plane: 0~%d", number_plane - 1);
         _d("Block: 0~%d", number_block - 1);
         _d("Page: 0~%d", number_page - 1);
