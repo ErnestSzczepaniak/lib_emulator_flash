@@ -1,6 +1,6 @@
 #include "emulator_client_flash.h"
 
-Emulator_client<Request_write, Request_read> Emulator_client_flash::_client("emulator_server_flash");
+Emulator_client<Request_write, Request_read, Request_erase> Emulator_client_flash::_client("emulator_server_flash");
 
 bool Emulator_client_flash::write(char * from, int plane, int block, int page)
 {
@@ -41,6 +41,8 @@ bool Emulator_client_flash::erase(int plane, int block)
 
     request.plane = plane;
     request.block = block;
+
+    _client.send(request);
 
     auto response = _client.receive<Response_erase>();
 

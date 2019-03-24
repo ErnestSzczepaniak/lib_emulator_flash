@@ -51,7 +51,7 @@ protected:
     
 
 private:
-    static Emulator_client<Request_write, Request_read> _client;
+    static Emulator_client<Request_write, Request_read, Request_erase> _client;
 
 };
 
